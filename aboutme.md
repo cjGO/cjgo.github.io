@@ -1,16 +1,7 @@
 ---
 layout: page
 title: About me
-subtitle: Why you'd want to go on a date with me
+subtitle: What am I doing here?
 ---
 
-My name is Inigo Montoya. I have the following qualities:
-
-- I rock a great mustache
-- I'm extremely loyal to my family
-
-What else do you need?
-
-### My story
-
-To be honest, I'm having some trouble remembering right now, so why don't you just watch [my movie](https://en.wikipedia.org/wiki/The_Princess_Bride_%28film%29) and it will answer **all** your questions.
+I'm a researcher. Originally I studied molecular biology, then plant development, then plant breeding, then bioinformatics, then machine learning. Now I am excited to study 3D Procedural modeling and Sim2Real for agriculture. After 2 degrees and 2 years in industry, I think it has high potential to increase adopton of ML models to orphan crops as well as optimize the plant architecture of CRISPR engineered staple crops and more. I hope to become skilled enough at Houdini to become a procedural botanist and collaborate with genetic engineers and plant breeders to contribute to the further development of modern agriculture.
