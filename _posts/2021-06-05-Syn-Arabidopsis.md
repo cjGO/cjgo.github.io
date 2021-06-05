@@ -84,6 +84,9 @@ Once the data was generated, a Machine Learning pipeline was employed with the f
 
 This model was then run over **real** images of arabidopsis plants. Recall, that this machine learning model had never seen a real plant before, as it was only updated on our synthetic plants created in Houdini. In this example, you can see it is able to find leafs with some degree of correctness! All without direct human intervention.
 
+![image](https://user-images.githubusercontent.com/12351695/120895642-0388ed80-c62f-11eb-95d0-48834298086b.png)
+
+
 #### Discussion
 
 Ask any Machine Learning Engineers what their greatest problem is. If they're performing the most common type of Machine Learning (Supervised Learning), they will tell you it is the lack of annotated data. To get the volumes of data they desire, their options are to pay local employees an expensive wage, outsource the work overseas, purchase the data from vendors, scrape data from the internet (if it is even available), or develop a complex scheme to get their users to annotate for them. Or they can employ synthetic data as we have done here with success.
