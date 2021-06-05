@@ -8,7 +8,7 @@ tags: [test]
 comments: true
 ---
 
-This blog post presents an overview of a brief experiment about synthetic data for agriculture. It is an end-to-end project; meaning that it will cover the creation of data to the results of a model which uses said data. This field is a burgeoning field. I will briefly outline what this field is all about before going into the details. 
+This blog post presents an overview of a brief experiment about synthetic data for agriculture. It is an end-to-end project; meaning that it will cover the creation of data to the results of a model which uses said data. This is a burgeoning field which has had enormous impacts in other industries beside agriculture. I will briefly outline what this field is all about before going into the details. 
 
 
 ![image](https://user-images.githubusercontent.com/12351695/120893459-75a80500-c624-11eb-908c-827e8b302d55.png)
@@ -49,15 +49,62 @@ BIAS: On top of this, we can also simulate tornadoes, hurricanes, fires, clouds,
 
 ## II. Real Application
 
+#### Creating the 3D models and Annotations
+
 Arabidopsis is the “model” organism of plant biology, typically all innovation begins with the model organisms of science. We will continue this tradition with our explorations of synthetic data for machine learning and computer vision. 
 
 We start simple; we want to track the growth of arabidopsis plants. This means counting the number of leaves, and recording the size of each leaf. This tells us how well the plant is growing. Some arabidopsis plants from different backgrounds may grow faster/slower depending on the conditions and their genetics. Our model will track this, taking a measurement (potentially) every minute/second/hour/day.
 
 Introducing SideFX’s Houdini; You have definitely witnessed the fruit from this software program if you’ve watched major movies or tv series in the past decade. This program is ideal for creating synthetic data because it’s foundation is set in the proceduralism which helps us produce unique plants with the click of a button. Below is an image of an arabidopsis plant created in Houdini. The other image is how it is constructed in houdini ( a graph of nodes which define the rules and variations for each plant ). 
 
-With this setup in Houdini, we can create many unique plants and we know which pixel belongs to each individual leaf.
+With this setup in Houdini, we can create many unique plants and we know which pixel belongs to each individual leaf. The image below is how the arabidopsis model is represented in Houdini. Each node defines a feature of the plant and has parameters which affect the resulting trait. Another node in Houdini is responsible for generating many of these with random features which introduces the noise...
+
+![image](https://user-images.githubusercontent.com/12351695/120893989-10094800-c627-11eb-92c3-1dce66ebea41.png)
+
+The result, as expected, are images of 3D models from above. Here are examples from a batch of plants. Additionally, we generate the pixel-by-pixel annotations; each pair of images corresponds to a 3D plant. Together, this is the minimum data required to train our Machine Learning model.
+
+![image](https://user-images.githubusercontent.com/12351695/120894108-d6850c80-c627-11eb-9286-2dfb2898c111.png)
+
+Next, we position some lights and the camera which controls the perspective of the resultant images. Note: the spheres with lines coming out represent the lighting, we can control the intensity, color, position, and number of lights along with the camera. This is of great significance and lends power to synthetic data (capturing many angles/lighting conditions can provide a greater number and variety of data).
+
+![image](https://user-images.githubusercontent.com/12351695/120894188-41cede80-c628-11eb-9353-7d3930022dec.png)
 
 
+To make the Synthetic images more real, we paste a picture of a pot and soil underneath the 3D plant. 
+
+![image](https://user-images.githubusercontent.com/12351695/120894142-0207f700-c628-11eb-9d43-696fd358c893.png)
+
+The images are generated in pairs again and are processed in preperation for training the Machine Learning model!
+
+#### The Machine Learning Model
+
+In this experiment, ~200 unique plants/images are created. The numbers of leaves vary from 2-8 as defined by the Houdini nodes. It took approximately ~60 minutes to generate all of these 3D models and their images.
+
+Once the data was generated, a Machine Learning pipeline was employed with the following tools: Docker, JupyterLab, and Keras. The Machine Learning model was pulled from Matterport's Mask-RCNN model with a pre-trained ResNET50. Then using *only* this synthetic data, the model's weights were updated to learn the shape of arabidopsis leaves.
+
+This model was then run over **real** images of arabidopsis plants. Recall, that this machine learning model had never seen a real plant before, as it was only updated on our synthetic plants created in Houdini. In this example, you can see it is able to find leafs with some degree of correctness! All without direct human intervention.
+
+#### Discussion
+
+Ask any Machine Learning Engineers what their greatest problem is. If they're performing the most common type of Machine Learning (Supervised Learning), they will tell you it is the lack of annotated data. To get the volumes of data they desire, their options are to pay local employees an expensive wage, outsource the work overseas, purchase the data from vendors, scrape data from the internet (if it is even available), or develop a complex scheme to get their users to annotate for them. Or they can employ synthetic data as we have done here with success.
+
+This was a pilot study demonstrating the workflow. There is much much to be done with this arabidopsis pipeline. Apart from cranking out 1000's of 3D models versus the 200 here, the 3D model can be improved. The textures can be improved, lighting can be made more realistic, finer details such as trichomes or disesaes could be added to the leaves. 
+
+This experiment demonstrates the wide skillsets required to make machine learning successful: Domain-Expertise in the form of plant physiology, 3D modeling, Machine Learning Development, and general computational skills. Synthetic Data will undoubtedly be a core tool in the expansion of Machine Learning in agriculture as we extend applicable models to diverse crops and conditions. There are many more very interesting applications which I will highlight in future blog posts; for example, how can we use these procedural models to properly apply CRISPR to staple crops.
+
+
+#### Bonus
+
+An example of synthetic data for a rooting phenotype experiment simulating point cloud / LIDAR data. Given that we procedurally generated the roots in Houdini, we know the individual root hair each point originates from. As well as RGB and semantic annotations.
+
+![image](https://user-images.githubusercontent.com/12351695/120894558-1d740180-c62a-11eb-9721-1ae46e3010ed.png)
+
+![image](https://user-images.githubusercontent.com/12351695/120894596-485e5580-c62a-11eb-821f-5ad51fd89120.png)
+
+
+An early cut from my experiments with Houdini to create procedural plants.
+
+![image](https://user-images.githubusercontent.com/12351695/120894624-76dc3080-c62a-11eb-8fdb-459672d73b19.png)
 
 
 
