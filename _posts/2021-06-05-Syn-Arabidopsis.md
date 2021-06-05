@@ -30,20 +30,20 @@ Imagine creating a model to count the number of apples an orchard. This model wi
 
 Images of the orchard are acquired daily for 1 year. Then a human looks at these images, and labels where the apples are in each image. These images are now “annotated images”. The annotated images are used to train a model. This in short, is how Machine Learning models are trained.
 
-However, there are several problems
+However, there are major problems
 1) *NUMBER ANNOTATED IMAGES* : It would be a huge cost to pay people to click through each of these images and wouldn’t result in a very high number of images.
 2) *BIAS IN AVAILABLE IMAGES* : e.g. The weather from this year was generally sunny, there were very few cloudy days
 
-Ignoring these problems and creating a model from the available years images will result in a model that works very well, only some of the time, when the conditions were very similar to the year the images were acquired. Maybe the following year there were more cloudy days, greater humidity, all of which affect how the plant looks, grows, or changes the quality of the images. This breaks the models performance, meaning it can not be used for the cost-saving measures as desired.
+Ignoring these problems and creating a model from the available years images will result in a model that works very well, only some of the time; when the conditions were very similar to the year the images were acquired. Maybe the following year there were more cloudy days, greater humidity, all of which affect how the plant looks and grows, or changes the quality of the images. This breaks the model's performance, meaning it can not be used for the cost-saving measures as desired.
 
 ### iii. Synthetic Data
 
 Synthetic Data is the crossroads between modern video games and Machine Learning. Thanks to “Procedural Generation” we can create an infinite number of unique 3D objects. In the context of an orchard, you can imagine growing a seed into a tree which in turn grows apples. The “procedural” part means that this tree grows according to rules which have subtelties. You can now grow an ENTIRE orchard of UNIQUE trees with UNIQUE apples! It is as if you grew years of orchards in real life. Every tree is different. This is in essence what synthetic data is; with one additional feature. This feature is “automatic annotations”. Since a computer program was used to grow these unique trees, the program also knows which pixel belongs to the tree’s trunk, leaves, or individual apples. This is incredibly intriguing for training machine learning models. Because not only do we have variable data, it is completely annotated. This saves humans the troubles of taking images, and labeling images. Not to mention planting an apple seed, tending an orchard for severals of years! 
 
 
-NUMBER OF ANNOTATED IMAGES : Now with our synthetic orchards, we can generate thousands, or even millions of trees to train our model with the push of a button. 
+*NUMBER OF ANNOTATED IMAGES* : Now with our synthetic orchards, we can generate thousands, or even millions of trees to train our model with the push of a button. 
 
-BIAS: On top of this, we can also simulate tornadoes, hurricanes, fires, clouds, air pollution, and every possible type of stress ( from insect damage, to hail damage, to heat stress, to frost ). We can now address the issue of bias we would have from only acquiring 1 years worth of images from a single orchard. With enough knowledge about plant physiology, we can make the leaves bend, curl, or discolor as we please. In theory, this will make the apple counting model much more reliable and we can base our management decisions from the model with greater confidence ; reducing our risk and maximizing our profits.
+*BIAS*: On top of this, we can also simulate tornadoes, hurricanes, fires, clouds, air pollution, and every possible type of stress ( from insect damage, to hail damage, to heat stress, to frost ). We can now address the issue of bias we would have from only acquiring 1 years worth of images from a single orchard. With enough knowledge about plant physiology, we can make the leaves bend, curl, or discolor as we please. In theory, this will make the apple counting model much more reliable and we can base our management decisions from the model with greater confidence ; reducing our risk and maximizing our profits.
 
 
 
