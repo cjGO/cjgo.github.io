@@ -4,6 +4,8 @@ title: Synthetic Arabidopsis
 subtitle: Procedural Machine Learning
 #gh-repo: daattali/beautiful-jekyll
 #gh-badge: [star, fork, follow]
+cover-img: /assets/synarabidopsis/Screenshot 2020-10-04 030313.png
+
 tags: [test]
 comments: true
 ---
