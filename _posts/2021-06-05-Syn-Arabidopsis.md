@@ -95,17 +95,12 @@ This experiment demonstrates the wide skillsets required to make machine learnin
 
 #### Bonus
 
-An example of synthetic data for a rooting phenotype experiment simulating point cloud / LIDAR data. Given that we procedurally generated the roots in Houdini, we know the individual root hair each point originates from. As well as RGB and semantic annotations.
+An example of synthetic data for a rooting phenotype experiment simulating point cloud / LIDAR data. Given that we procedurally generated the roots in Houdini, we know the individual root hair each point originates from. 
 
-![image](https://user-images.githubusercontent.com/12351695/120894558-1d740180-c62a-11eb-9721-1ae46e3010ed.png)
-
-![image](https://user-images.githubusercontent.com/12351695/120894596-485e5580-c62a-11eb-821f-5ad51fd89120.png)
-
+![Lidar](https://github.com/cjGO/cjgo.github.io/blob/master/assets/img/lidarML.gif?raw=true)
 
 An early cut from my experiments with Houdini to create procedural plants.
 
-![image](https://user-images.githubusercontent.com/12351695/120894624-76dc3080-c62a-11eb-8fdb-459672d73b19.png)
-
-
+![early cut](https://github.com/cjGO/cjgo.github.io/blob/master/assets/img/singletobac.gif?raw=true)
 
 
