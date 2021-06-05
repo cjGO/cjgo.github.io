@@ -102,5 +102,5 @@ An example of synthetic data for a rooting phenotype experiment simulating point
 An early cut from my experiments with Houdini to create procedural plants.
 
 ![early cut](https://github.com/cjGO/cjgo.github.io/blob/master/assets/img/singletobac.gif?raw=true)
-
+![grow plant](https://github.com/cjGO/cjgo.github.io/blob/master/assets/img/synarabidopsis/segundtabak.gif?raw=true)
 
