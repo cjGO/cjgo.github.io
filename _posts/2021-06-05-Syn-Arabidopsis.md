@@ -4,9 +4,8 @@ title: Synthetic Arabidopsis
 subtitle: Procedural Machine Learning
 #gh-repo: daattali/beautiful-jekyll
 #gh-badge: [star, fork, follow]
-cover-img: /assets/synarabidopsis/Screenshot 2020-10-04 030313.png
-
-tags: [test]
+cover-img: /assets/synarabidopsis/ScreenArt.png
+tags: [synthetic]
 comments: true
 ---
 
@@ -57,13 +56,13 @@ Arabidopsis is the “model” organism of plant biology, typically all innovati
 
 We start simple; we want to track the growth of arabidopsis plants. This means counting the number of leaves, and recording the size of each leaf. This tells us how well the plant is growing. Some arabidopsis plants may grow faster/slower depending on the conditions and their genetics. Our model will track this, taking a measurement (potentially) every minute/second/hour/day.
 
-Introducing SideFX’s Houdini; You have definitely witnessed the the output from this software program if you’ve watched major movies or tv series in the past decade. This program is ideal for creating synthetic data because its foundation is set in the proceduralism which helps us produce unique plants with the click of a button. Below is an image of an arabidopsis plant created in Houdini. The other image is how it is constructed in houdini (a graph of nodes which define the rules and variations for each plant). 
+Introducing SideFX’s Houdini; You have definitely witnessed the the output from this software program if you’ve watched major movies or tv series in the past decade. This program is ideal for creating synthetic data because its foundation is set in the proceduralism which helps us produce unique plants with the click of a button.
 
 With this setup in Houdini, we can create many unique plants and we know which pixel belongs to each individual leaf. The image below is how the arabidopsis model is represented in Houdini. Each node defines a feature of the plant and has parameters which affect the resulting trait. Another node in Houdini is responsible for generating many of these with random features which introduces the noise...
 
 ![image](https://user-images.githubusercontent.com/12351695/120893989-10094800-c627-11eb-92c3-1dce66ebea41.png)
 
-The result, as expected, are images of 3D models from above. Here are examples from a batch of plants. Additionally, we generate the pixel-by-pixel annotations; each pair of images corresponds to a 3D plant. Together, this is the minimum data required to train our Machine Learning model.
+The result, as expected, are images of 3D models from above. Here are examples from a batch of plants. Additionally, we generate the pixel-by-pixel annotations; each pair of images corresponds to a 3D plant. Each unique color per image likewise corresponds to a particular leaf. Together, this is the minimum data required to train our Machine Learning model.
 
 ![image](https://user-images.githubusercontent.com/12351695/120894108-d6850c80-c627-11eb-9286-2dfb2898c111.png)
 
