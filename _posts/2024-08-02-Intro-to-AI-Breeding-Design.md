@@ -31,8 +31,8 @@ Breeding simulations perform two main operations:
 Understanding genetic variance is key to grasping the dynamics at play in this scenario. Each time we select a subset of individuals as parents, we typically reduce the offspring population genetic variance in exchange for an improved average trait value (phenotype). This delicate balance between maintaining genetic diversity and advancing desired traits is at the heart of breeding strategy – a balance that simulations allow breeders to fine-tune without the constraints of time and budget that real-world experiments impose.
 
 
-
-![[phenotype_distribution (4).mp4]]
+![image](https://github.com/cjGO/cjgo.github.io/blob/master/assets/img/blog_animate_inbreeding.mp4)  
+![[blog_animate_inbreeding.mp4]]
 
 A quick (in)breeding lesson ;  In this animation 5 distinct breeding programs are simulated where a specified value for the selection intensity is repeated for 100 cycles of selection. Of note:
 
@@ -61,7 +61,7 @@ The middle chart shows the genetic variance, which is the same as saying how wid
 The bottom chart shows the max phenotype, another metric to see how well they perform. The dashed line shows the optimal constant action.
 
 
-![[Pasted image 20240804035034.png]]
+![image](https://github.com/cjGO/cjgo.github.io/blob/master/assets/img/breeder_agent_01.png?raw=true)  
 
 The breeder agent will now use the same simulation to come up with its own solution to this problem. Instead of being forced to pick a constant action, we allow the agent to pick any number between 0.01 and 0.99 at each cycle. We know that if it simply repeats 0.11, it will reach a high score; however, the agent has no prior knowledge of quantitative genetics or breeding. Instead, it must play the game by making random decisions until it learns to find a consistent reward.
 
@@ -73,7 +73,8 @@ In addition, we provide the agent with information about the current state of th
 
 These three pieces of information were found to consistently reach a similar score to our constant action baselines. In the figure below, we can see the average scores during the agent training. Light blue represents the beginning of the program, while the dark purple line represents the final cycle. The dashed red line is the baseline from our constant action strategy. The x-axis shows the number of training steps the agent has taken so far.
 
-![[Pasted image 20240804035012.png]]
+
+![image](https://github.com/cjGO/cjgo.github.io/blob/master/assets/img/breeder_agent_02.png?raw=true)  
 
 The agent successfully leverages the simulation software to explore strategies, finding a relatively unique solution compared to our naive baseline of repeating the same action every cycle. The agent takes a series of decreasing steps, at or below the best constant action we found (seen on the bottom chart). Given the simplicity of this example, it's likely both the agent and naive baseline are finding near-optimal solutions. Showing that the agent can learn this trivial example is a crucial first step to build support for these algorithms.
 
