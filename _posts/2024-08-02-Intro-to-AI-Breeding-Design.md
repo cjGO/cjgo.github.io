@@ -29,9 +29,7 @@ Breeding simulations perform two main operations:
 2) They simulate offspring creation by combining genetic information from two parent plants, mimicking natural processes like meiosis and recombination
 
 Understanding genetic variance is key to grasping the dynamics at play in this scenario. Each time we select a subset of individuals as parents, we typically reduce the offspring population genetic variance in exchange for an improved average trait value (phenotype). This delicate balance between maintaining genetic diversity and advancing desired traits is at the heart of breeding strategy – a balance that simulations allow breeders to fine-tune without the constraints of time and budget that real-world experiments impose.
-{% raw %}
-{% video {{ site.baseurl }}/assets/img/blog_animate_inbreeding.mp4 %}
-{% endraw %}
+
 --
 
 <video width="100%" height="auto" controls>
