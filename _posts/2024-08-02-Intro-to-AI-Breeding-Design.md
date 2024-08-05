@@ -3,10 +3,7 @@ layout: post
 title: Intro to AI Breeder Agents
 subtitle: Now running on GPU
 #gh-repo: daattali/beautiful-jekyll
-#gh-badge: [star, fork, follow]
-#tags: [test]
 comments: true
-#mathjax: true
 author: Colton G
 ---
 
