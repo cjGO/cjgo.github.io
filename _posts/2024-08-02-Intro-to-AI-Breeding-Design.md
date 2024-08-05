@@ -15,7 +15,6 @@ To illustrate the complexity of decision-making in breeding programs, let's exam
 1. Set a fixed population size for each breeding cycle (e.g., 100 plants)
 2. Establish the duration of the breeding program (e.g., 5 cycles, where each cycle represents one generation of plants)
 3. Breeder's Decision Process
-4. 
     a. Score each plant in the population for the trait of interest  
     b. Rank the plants by this score  
     c. Select the top-performing plants as parents (e.g., keep only the highest 5% of individuals)  
