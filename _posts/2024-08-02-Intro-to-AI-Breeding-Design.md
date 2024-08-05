@@ -33,8 +33,11 @@ Understanding genetic variance is key to grasping the dynamics at play in this s
 {% video {{ site.baseurl }}/assets/img/blog_animate_inbreeding.mp4 %}
 {% endraw %}
 --
-![image](https://github.com/cjGO/cjgo.github.io/blob/master/assets/img/blog_animate_inbreeding.mp4)  
-![[blog_animate_inbreeding.mp4]]
+
+<video width="100%" height="auto" controls>
+  <source src="{{ site.baseurl }}/assets/img/blog_animate_inbreeding.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
 
 A quick (in)breeding lesson ;  In this animation 5 distinct breeding programs are simulated where a specified value for the selection intensity is repeated for 100 cycles of selection. Of note:
 
