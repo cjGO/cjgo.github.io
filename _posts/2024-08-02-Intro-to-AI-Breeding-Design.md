@@ -11,8 +11,7 @@ Plant breeding programs are expensive and long-lasting, typically taking 6-14 ye
 
 To illustrate the complexity of decision-making in breeding programs, let's examine the simplest design a program can follow when aiming to increase the score of a single trait.
 
-Simplest Breeding Program Design:
-
+**Simplest Breeding Program Design:**
 1. Set a fixed population size for each breeding cycle (e.g., 100 plants)
 2. Establish the duration of the breeding program (e.g., 5 cycles, where each cycle represents one generation of plants)
 3. Breeder's Decision Process
@@ -40,10 +39,14 @@ Understanding genetic variance is key to grasping the dynamics at play in this s
 A quick (in)breeding lesson ;  In this animation 5 distinct breeding programs are simulated where a specified value for the selection intensity is repeated for 100 cycles of selection. Of note:
 
 1) Selection Intensity 0.01 (red) : this represents keeping only the best of the best of our population. It starts out in the lead but almost immediately hits a wall. When you see the column that means the population is completely inbred. There is nothing to select from; dead end. We don't make use of 90% of the remaining cycles.
-2) Selection Intensity 0.10 (yellow): this is the next quickest after 0.01. It also burns out and hits a dead end when inbreeding becomes too strong. Again we don't make use of the entire available time because of poor breeding.
-3) Selection Intensity 0.50 (green): Despite not improving as quickly as 0.10, it lasts longer, it only reaches intense inbreeding at the very end of our 100 cycle breeding program, making use of every cycle to improve the phenotype.
-4) Selection Intensity 0.85 (blue): Slow and steady doesn't win the race if the race isn't a marathon. While our simulation is 100 cycles long, this population is not a column at the end of it and therefore still has variation to improve the phenotype with.
-5) Selection Intensity 0.99 (purple): A slight selection. Over 100 cycles its score slightly increases while maintaining high diversity. Given another 900 cycles even this population will also reach critical inbreeding.
+   
+3) Selection Intensity 0.10 (yellow): this is the next quickest after 0.01. It also burns out and hits a dead end when inbreeding becomes too strong. Again we don't make use of the entire available time because of poor breeding.
+   
+5) Selection Intensity 0.50 (green): Despite not improving as quickly as 0.10, it lasts longer, it only reaches intense inbreeding at the very end of our 100 cycle breeding program, making use of every cycle to improve the phenotype.
+   
+7) Selection Intensity 0.85 (blue): Slow and steady doesn't win the race if the race isn't a marathon. While our simulation is 100 cycles long, this population is not a column at the end of it and therefore still has variation to improve the phenotype with.
+
+9) Selection Intensity 0.99 (purple): A slight selection. Over 100 cycles its score slightly increases while maintaining high diversity. Given another 900 cycles even this population will also reach critical inbreeding.
 
 This simulation was using the same repeated action throughout the breeding program, as a simple strategy. A professional breeder would take into consideration the state of their current population and breeding program. In complex breeding programs, even the fastest simulations aren't quick enough to model every scenario, there are simply too many.
 
