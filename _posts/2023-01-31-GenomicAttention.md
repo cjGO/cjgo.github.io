@@ -35,6 +35,9 @@ There are several important considerations for using transformers for the use-ca
 DNA Compression: First, transformers may be powerful, but they are also computationally hungry. With modern breeding programs, the number of SNPs or genes used as input may vary from 500 to 500,000. Historically, the maximum number of input sequences is limited to 1024 or so tokens. Therefore we must compress the genotype input to the transformer.
 - Solutions in previous models, like the Enformer model (citation) use convolutional layers to reduce the input size.
 
+Data Hunger: Transformers typically require more data than an equivalent CNN model (a simpler, robust standard model). 
+
+Cross Attenton : It's important to keep the network architecture lean. With transformers we have more options to increase the power of the model or at the same time shoot ourselves in the foot by including too many unncessary or unhelpful connections. With transformers we have the option of mixing and matching data streams within the architecture.
 
 
 
@@ -44,7 +47,7 @@ DNA Compression: First, transformers may be powerful, but they are also computat
 
 This project was developed with pytorch and nbdev. See the documentation here: https://cjgo.github.io/hybridpredictmaize22/
 
-I successfully replicated the performance of the model a recent paper by replicating their architecture.
+I successfully replicated the performance of the model a recent paper by replicating their architecture. This included transformer layers and cross attention connections between the weather and genotype inputs. Overall it was a good lesson in writing pytorch networks and data pre-processing pipelines from scratch.
 
 Thanks to http://www.genomes2fields.org/
 
