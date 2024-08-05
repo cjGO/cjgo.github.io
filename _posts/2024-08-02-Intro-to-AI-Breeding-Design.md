@@ -24,7 +24,9 @@ To illustrate the complexity of decision-making in breeding programs, let's exam
 Consider the stark difference between selecting the top 3% versus the top 10% of parents in each breeding cycle. Over multiple generations, these seemingly small variations in selection intensity can lead to dramatically different outcomes in the final population's trait values. However, testing every possible combination of parent selection rates in real-world field trials is simply unfeasible.
 
 Breeding simulations perform two main operations:
+
 1) They predict an individual trait score based on its genetic makeup (genotype).
+
 2) They simulate offspring creation by combining genetic information from two parent plants, mimicking natural processes like meiosis and recombination
 
 Understanding genetic variance is key to grasping the dynamics at play in this scenario. Each time we select a subset of individuals as parents, we typically reduce the offspring population genetic variance in exchange for an improved average trait value (phenotype). This delicate balance between maintaining genetic diversity and advancing desired traits is at the heart of breeding strategy – a balance that simulations allow breeders to fine-tune without the constraints of time and budget that real-world experiments impose.
