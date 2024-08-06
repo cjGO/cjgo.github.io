@@ -15,7 +15,7 @@ To illustrate the complexity of decision-making in breeding programs, let's exam
 1. Set a fixed population size for each breeding cycle (e.g., 100 plants)
 2. Establish the duration of the breeding program (e.g., 5 cycles, where each cycle represents one generation of plants)
 3. Breeder's Decision Process
-    a. Score each plant in the population for the trait of interest  
+    a. Score each plant in the population for the trait of interest
     b. Rank the plants by this score  
     c. Select the top-performing plants as parents (e.g., keep only the highest 5% of individuals)  
     d. Randomly cross the selected parents to create a new population  
@@ -25,7 +25,7 @@ Consider the difference between selecting the top 3% versus the top 10% of paren
 
 Breeding simulations perform two main operations:
 
-1) They predict an individual trait score based on its genetic makeup (genotype).
+1) They predict an individual trait score based on its genetic makeup (genotype)
 
 2) They simulate offspring creation by combining genetic information from two parent plants, mimicking natural processes like meiosis and recombination
 
