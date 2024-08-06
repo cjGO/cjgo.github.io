@@ -38,7 +38,7 @@ Understanding genetic variance is key to grasping the dynamics at play in this s
   Your browser does not support the video tag.
 </video>
 
-A quick (in)breeding lesson; In this animation each frame shows the trait values for a populations of 5 distinct breeding simulations where a specified selection intensity is repeated for 100 cycles of selection. Of note:
+A quick (in)breeding lesson; In this animation each frame shows the trait values for a population of 5 distinct breeding simulations where a specified selection intensity is repeated for 100 cycles of selection. Of note:
 
 1) Selection Intensity 0.01 (red) : this represents keeping only the best of the best of our population. It starts out in the lead but almost immediately hits a wall. When you see the column that means the population is completely inbred. There is nothing to select from; dead end. We don't make use of 90% of the remaining cycles.
    
