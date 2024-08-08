@@ -24,9 +24,12 @@ To illustrate the complexity of decision-making in breeding programs, let's exam
 
 Consider the difference between selecting the top 3% versus the top 10% of parents in each breeding cycle. Over multiple generations, these seemingly small variations in selection intensity can lead to dramatically different outcomes in the final population's trait values. However, testing every possible combination of parent selection rates in real-world field trials is simply unfeasible.
 
+
+---
+
 Breeding simulations perform two main operations:
 
-1) They predict an individual trait score based on its genetic makeup (genotype)
+1) They predict an individual's trait score based on its genetic makeup (genotype)
 
 2) They simulate offspring creation by combining genetic information from two parent plants, mimicking natural processes like meiosis and recombination
 
