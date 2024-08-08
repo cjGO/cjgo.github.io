@@ -20,12 +20,12 @@ In this case, we have 2 variables, so will produce a heatmap where the x axis is
 
 We can see a clear landscape of optimal values peaking at low action values for both selection intensity and budget allocation per cycle.
 
-Similar to the last experiment, it is likely that this simple baseline is actually a strong solution.
+Similar to the last experiment, it is likely that this simple baseline is actually a strong solution. Any solution which effectively uses the total budget and burns off most of the genetic variance will likely be similar in final score...
 
 ![image](https://github.com/cjGO/cjgo.github.io/blob/master/assets/img/blog_budget_heatmap.png?raw=true)
 
 
-Training an agent with two actions instead of one is actually more complicated. By simply adding this logic, the training logs are a lot more erratic, experiencing a form of RL training collapse where we can see the values dropping off, and losing variation.
+Training an agent with two actions instead of one is actually much more complicated. By doubling the number of decisions the agent must make each cycle, the training logs are a lot more erratic, experiencing a form of RL training collapse where we can see the values dropping off, and losing variation.
 
 Surprisingly, after collapsing, the agent is apparently able to recover given enough time, however this is by and large an unstable process.
 
@@ -37,7 +37,7 @@ Some concerns with this workflow which may be contributing to this instability..
 
 We are using the stable-baselines 3 library's built-in policy network which influences the action output, especially at the very beginning of training. This is most obvious in the last chart for budget_spent_per_generation. The default settings favor the very first values from the network to be centered around 0 which translates to spending 50% of the remaining budget on the first cycle. Over time this balances out and it appears the agent finds a more logical budget distribution, however this initial settings may have strong influences on the rest of training preventing it from finding a more consistent tracjetory through the action space.
 
-We can code our own policies and control the initial weights and biases so initial values start out much lower, potentially providing flexibility to the rest of the training process.
+We can code our own policies and control the initial weights and biases so initial values start out much lower, potentially providing flexibility to the rest of the training process. Currently, we are beginning the training in a potentialy unfavorable starting position of the action which could have a negative domino effect for the rest of the training process.
 
 We may also hand-code some behavior like constraints or penalties to avoid behavior explicitly. For example, we can punish the agent if the actions within an episode are too similar (like what clearly happens after a collapse event).
 
@@ -45,7 +45,4 @@ It's unfortunate the agent does not learn a clearly stronger strategy that beats
 
 There are also concepts like curriculum learning which are popular. This is based on gradually introducing complexity to the agent's environment throughout the training process.
 
-More time will be spent with this environment, to see if changing the policy or adding hard-coded rules to affects the agent's training behavior and overall performance.
-
-
-
+More time will be spent with this environment, to see if any tricks positively affects the agent's training behavior and overall performance.
