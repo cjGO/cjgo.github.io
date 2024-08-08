@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Intro to AI Breeder Agents
+title: 001-Intro to AI Breeder Agents
 subtitle: Now running on GPU
 #gh-repo: daattali/beautiful-jekyll
 comments: true
