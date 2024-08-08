@@ -8,11 +8,6 @@ author: Colton G
 ---
 
 
-![image](https://github.com/cjGO/cjgo.github.io/blob/master/assets/img/breeder_agent_01.png?raw=true)
-
-
-
-
 In the first experiment, our agent was given a breeding program with a fixed budget; The same number of offspring were produced each generation. In reality, the breeder can allocate resources unevenly across the selection cycles. The simplest way to allocate budget is to increase the number of grown individuals, giving them more shuffled genomes and potentially higher trait scores.
 
 This presents an interesting extension for our breeder agent. We will now give it a starting budget and each cycle it can decide how much of the current budget to spend on the given cycle.
