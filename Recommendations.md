@@ -4,7 +4,6 @@ title: Useful Links
 subtitle: 
 ---
 
-This curated list covers essential knowledge for work in breeding and AI.
 
 ## Mathematics and Statistics
 - [Statistics: ISLR](https://www.statlearning.com/)
