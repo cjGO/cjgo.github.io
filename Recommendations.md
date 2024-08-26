@@ -4,20 +4,28 @@ title: Useful Links
 subtitle: Content Curation
 ---
 
-This list practically covers all the knowledge required to do work in breeding and AI
+This curated list covers essential knowledge for work in breeding and AI.
 
-Math Stats
-https://link.springer.com/book/10.1007/978-3-319-59731-7
+## Mathematics and Statistics
 
-Plant Development
-https://www.youtube.com/watch?v=l4ShaYvS_VA
+- [Mathematical Statistics: Basic Ideas and Selected Topics](https://link.springer.com/book/10.1007/978-3-319-59731-7)
 
-Breeding
-https://plantbreeding.ncsu.edu/academics/master-of-science/
-https://www.onlinecourses.ed.ac.uk/all-courses/breeding-programme-modelling-alphasimr
+## Plant Science
 
-Quantitative Genetics
-https://archive.org/details/IntroductionToQuantitativeGenetics
+### Plant Development
+- [Plant Development and Evolution (YouTube)](https://www.youtube.com/watch?v=l4ShaYvS_VA)
 
-ML
-https://karpathy.ai/zero-to-hero.html
+## Breeding
+
+### Educational Programs
+- [Master of Science in Plant Breeding (NC State University)](https://plantbreeding.ncsu.edu/academics/master-of-science/)
+- [Breeding Programme Modelling with AlphaSimR (University of Edinburgh)](https://www.onlinecourses.ed.ac.uk/all-courses/breeding-programme-modelling-alphasimr)
+
+## Genetics
+
+### Quantitative Genetics
+- [Introduction to Quantitative Genetics (Internet Archive)](https://archive.org/details/IntroductionToQuantitativeGenetics)
+
+## Machine Learning
+
+- [Neural Networks: Zero to Hero (Andrej Karpathy)](https://karpathy.ai/zero-to-hero.html)
