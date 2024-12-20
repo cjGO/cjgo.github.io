@@ -11,37 +11,42 @@ comments: true
 
 This post covers work related to a recent GEM maize competition where users were provided SNP data, weather data, and additional data to predict the yields in an unseen year.
 
-## I. Overview of the Problem
+# Transformers in Genomic Prediction: Advancing Plant Breeding Through Deep Learning
 
-### i. Genomic Prediction
+## The Evolution of Genomic Prediction in Plant Breeding
 
-Plant breeding relies on predicting the breeding value of individuals. The ability to do so allows a breeder to sift through hundreds of thousands of individuals versus thousands. Breeders primarily care about additive variation (which is linear and independent) because this variation is most likely to be passed on from parents to offspring. On the other hand, non-additive variation (from epistasie( g * g ) and environment (g * e) can technically be used to improve the accuracy of prediction.
+Plant breeding has entered a new era where computational prediction of breeding values has become crucial for scaling selection processes from thousands to hundreds of thousands of individuals. Traditionally, breeders have focused on additive genetic variation - the linear, independently inherited components that reliably pass from parents to offspring. While non-additive effects like epistasis (gene-gene interactions) and genotype-environment interactions can enhance prediction accuracy, they've been historically challenging to model effectively.
 
-gBLUP has been the traditional methodology for predicting breeding values, since it captures linear effects. However, in the past two years, new approaches have bled into the plant breeding space, namely from the deep learning tool, transformers.
+For years, genomic Best Linear Unbiased Prediction (gBLUP) has been the gold standard for predicting breeding values, excelling at capturing linear genetic effects. However, the landscape is rapidly evolving with the introduction of transformer architectures into plant breeding applications.
 
+## Understanding Transformer Architecture in Genomic Contexts
 
-### ii. Transformers
+Since their introduction in the seminal "Attention Is All You Need" paper (Vaswani et al., 2017), transformers have revolutionized machine learning across domains. Their success in natural language processing has catalyzed adaptations for diverse data types, including biological sequences. The key innovation lies in the attention mechanism, which enables the model to discover and weigh interactions between any elements in a sequence, regardless of their distance.
 
-Transformers have swept the entire field of machine learning, gradually since their inception in 2017. Ever since, increasingly, they have been adapted to virtually every domain and data type, originally from text then from images to biological sequence.
+In genomic applications, this means a transformer can identify relationships between distant genetic markers that might influence traits - a capability particularly relevant for capturing epistatic effects that traditional linear models might miss. The transformer processes genetic sequences by converting them into rich, context-aware representations that capture both local and global patterns in the genome.
 
-The major improvement over previous models, is that the transformer leverages 'attention'. Attention allows the model to find interactions across a given sequence (like a gene or genome). The interactions can be discovered across a sequence, allowing elements (like a nucleotide at a given position) to capture interactions with other distant elements.
+## Engineering Considerations for Genomic Transformers
 
-In short, the transformer takes in a sequence, and returns a new sequence which represents a more useful representation for the task at hand.
+Implementing transformers for genomic prediction presents several unique challenges:
 
-### iii. Transformers for Genomic Prediction
+1. Sequence Length Management: Modern breeding programs generate dense genetic markers, often ranging from 500 to 500,000 SNPs per individual. This far exceeds the typical transformer sequence length limits (usually around 1024 tokens). Solutions include:
+   - Hierarchical compression using convolutional layers, similar to the Enformer architecture
+   - Attention-based pooling strategies to maintain information while reducing dimensionality
+   - Linear attention variants that scale better with sequence length
 
-There are several important considerations for using transformers for the use-case of genomic prediction.
+2. Data Efficiency: While transformers are powerful, they typically require larger datasets compared to CNNs. In breeding contexts, this necessitates:
+   - Careful architecture design to prevent overfitting
+   - Implementation of regularization strategies specific to genomic data
+   - Potential use of pre-training on larger genomic datasets before fine-tuning on specific breeding populations
 
-DNA Compression: First, transformers may be powerful, but they are also computationally hungry. With modern breeding programs, the number of SNPs or genes used as input may vary from 500 to 500,000. Historically, the maximum number of input sequences is limited to 1024 or so tokens. Therefore we must compress the genotype input to the transformer.
-- Solutions in previous models, like the Enformer model (citation) use convolutional layers to reduce the input size.
+3. Architecture Design: Cross-attention mechanisms offer powerful ways to integrate multiple data streams (genetic, environmental, phenotypic), but require careful consideration:
+   - Balance between model expressiveness and computational efficiency
+   - Strategic placement of cross-attention layers to maximize information flow
+   - Careful ablation studies to validate the utility of each architectural component
 
-Data Hunger: Transformers typically require more data than an equivalent CNN model (a simpler, robust standard model). 
+This approach to genomic prediction represents a significant advance in our ability to model complex genetic architectures and could substantially impact breeding program efficiency. The GEM maize competition provides a practical testbed for these methods, challenging researchers to predict yields using SNP, weather, and auxiliary data in novel environments.
 
-Cross Attenton : It's important to keep the network architecture lean. With transformers we have more options to increase the power of the model or at the same time shoot ourselves in the foot by including too many unncessary or unhelpful connections. With transformers we have the option of mixing and matching data streams within the architecture.
-
-
-
-## II. Real Application
+## II.Example code
 #### The Machine Learning Model
 #### Discussion
 
