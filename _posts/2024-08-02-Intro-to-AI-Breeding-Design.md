@@ -17,12 +17,16 @@ To illustrate the complexity of decision-making in breeding programs, let's exam
 3. Breeder's Decision Process
    
     a. Score each plant in the population for the trait of interest
-    b. Rank the plants by this score  
-    c. Select the top-performing plants as parents (e.g., keep only the highest 5% of individuals)  
-    d. Randomly cross the selected parents to create a new population  
+   
+    b. Rank the plants by this score
+   
+    c. Select the top-performing plants as parents (e.g., keep only the highest 5% of individuals)
+   
+    d. Randomly cross the selected parents to create a new population
+   
     e. Repeat steps a-d until the breeding program ends
 
-Consider the difference between selecting the top 3% versus the top 10% of parents in each breeding cycle. Over multiple generations, these seemingly small variations in selection intensity can lead to dramatically different outcomes in the final population's trait values. However, testing every possible combination of parent selection rates in real-world field trials is simply unfeasible.
+Consider the difference between selecting the *top 3% versus the top 10%* of parents in each breeding cycle. Over multiple generations, these seemingly small variations in selection intensity can lead to **dramatically different** outcomes in the final population's trait values. However, testing every possible combination of parents in the real-world is simply impossible.
 
 
 ---
@@ -31,7 +35,7 @@ Breeding simulations perform two main operations:
 
 1) They predict an individual's trait score based on its genetic makeup (genotype)
 
-2) They simulate offspring creation by combining genetic information from two parent plants, mimicking natural processes like meiosis and recombination
+2) They simulate offspring creation by combining genetic information from two parent plants, mimicking natural processes like meiosis
 
 Understanding genetic variance is key to grasping the dynamics at play in this scenario. Each time we select a subset of individuals as parents, we typically reduce the offspring population genetic variance in exchange for an improved average trait value (phenotype). This delicate balance between maintaining genetic diversity and advancing desired traits is at the heart of breeding strategy – a balance that simulations allow breeders to fine-tune without the constraints of time and budget that real-world experiments impose.
 
@@ -44,33 +48,77 @@ Understanding genetic variance is key to grasping the dynamics at play in this s
 
 A quick (in)breeding lesson; In this animation each frame shows the trait values for a population of 5 distinct breeding simulations where a specified selection intensity is repeated for 100 cycles of selection. Of note:
 
-1) Selection Intensity 0.01 (red) : this represents keeping only the best of the best of our population. It starts out in the lead but almost immediately hits a wall. When you see the column that means the population is completely inbred. There is nothing to select from; dead end. We don't make use of 90% of the remaining cycles.
-   
-3) Selection Intensity 0.10 (yellow): this is the next quickest after 0.01. It also burns out and hits a dead end when inbreeding becomes too strong. Again we don't make use of the entire available time because of poor breeding.
-   
-5) Selection Intensity 0.50 (green): Despite not improving as quickly as 0.10, it lasts longer, it only reaches intense inbreeding at the very end of our 100 cycle breeding program, making use of every cycle to improve the phenotype.
-   
-7) Selection Intensity 0.85 (blue): Slow and steady doesn't win the race if the race isn't a marathon. While our simulation is 100 cycles long, this population is not a column at the end of it and therefore still has variation to improve the phenotype with.
+# Inbreeding Simulation Analysis: Effect of Selection Intensity
 
-9) Selection Intensity 0.99 (purple): A slight selection. Over 100 cycles its score slightly increases while maintaining high diversity. Given another 900 cycles even this population will also reach critical inbreeding.
+Each frame shows trait values for 5 distinct breeding simulations across 100 selection cycles.
 
-This simulation was using the same repeated action throughout the breeding program, as a simple strategy. A professional breeder would take into consideration the state of their current population and breeding program. In complex breeding programs, even the fastest simulations aren't quick enough to model every scenario, there are simply too many.
+## Key Observations:
 
-Agents are models trained with Reinforcement Learning algorithms, which are best known for mastering complex, sequential decision-making in games like Go, Poker, and StarCraft II. Reinforcement Learning models are famous for being data-hungry which pairs well with simulations. The agent begins with no knowledge of the rules or consequences of its actions. Through neural networks compressing this information and a learning algorithm, it effectively stores memories and learns cause-and-effect relationships between its action(the selection intensity the breeder chooses to keep the top % of parents) and reward (the improved trait score of the offspring in the final generation of the breeding program). 
+**Selection Intensity 0.01 (Red)**
+- Represents selecting only the *elite* performers
+- Initially leads but rapidly plateaus
+- Population becomes fully inbred (visible as a column)
+- Wastes ~90% of available breeding cycles
 
-This is a relatively underexplored area in the breeding sciences; there is about a handful of publications on this topic today. 
+**Selection Intensity 0.10 (Yellow)**
+- Second fastest initial progress
+- Also reaches inbreeding dead-end
+- Fails to utilize full breeding timeline
+- Progress halts due to loss of diversity
+
+**Selection Intensity 0.50 (Green)** 
+- Slower initial improvement than 0.10
+- Maintains progress for longer duration
+- Reaches intense inbreeding only at cycle 100
+- *Maximizes use of available breeding cycles*
+
+**Selection Intensity 0.85 (Blue)**
+- Slower but more sustainable progress
+- Maintains genetic variation through cycle 100
+- Population avoids column formation
+- *Retains potential for further improvement*
+
+**Selection Intensity 0.99 (Purple)**
+- Minimal selection pressure applied
+- Gradual score increase over 100 cycles
+- *Preserves highest genetic diversity*
+- Would reach critical inbreeding after ~1000 cycles
+  
+This simulation was using the same repeated action throughout the breeding program, as a simple strategy. A professional breeder would adjust their actions taking into consideration the state of the current population profile. In complex breeding programs, even the fastest simulations aren't quick enough to model every scenario, there are simply too many combinations combined with random chance.
+
+*Agents* are models trained with Reinforcement Learning algorithms, which are best known for mastering complex, sequential decision-making in games like Go, Poker, and StarCraft II. Reinforcement Learning models are famous for being data-hungry which pairs well with simulations. The agent begins with no knowledge of the rules or consequences of its actions. Through neural networks compressing this information and a learning algorithm, it effectively stores memories and learns cause-and-effect relationships between its action(the selection intensity the breeder chooses to keep the top % of parents) and reward (the improved trait score of the offspring in the final generation of the breeding program). 
+
+This is a relatively underexplored area in the breeding sciences; there is a handful of publications on this topic today. 
 
 ---
 
-We will set up a similar scenario as before: a breeding program that lasts 10 cycles, has a fixed population size of 500 at each cycle, and we will use the same constant action to find a good baseline to compare the breeder agent to.
 
-In the figure below, each line represents a breeding program where a specific selection intensity was repeated for each of the 10 cycles. Purple intensity represents a conservative number of parents selected, versus green where more parents are selected.
+# Breeding Program Analysis: Effects of Selection Intensity Over 10 Cycles
 
-The top chart shows the improvement of phenotype at each cycle. We see the phenomenon of inbreeding again with the darkest purple line representing the strongest selection intensity, which plateaus at its top value before the program ends.
+## Program Parameters:
+- **Duration**: 10 breeding cycles
+- **Population Size**: 500 individuals per cycle
+- **Variable**: Selection intensity (compared against constant baseline)
 
-The middle chart shows the genetic variance, which is the same as saying how wide the distribution is, like in the animation earlier. If it's not zero, then it's possible for selection to still improve the trait in the offspring population.
+## Figure Analysis:
 
-The bottom chart shows the max phenotype, another metric to see how well they perform. The dashed line shows the optimal constant action.
+### *Top Chart: Phenotype Improvement*
+- Each line represents a different selection intensity strategy
+- **Purple lines**: Conservative parent selection (fewer parents)
+- **Green lines**: Liberal parent selection (more parents)
+- *Key observation*: Darkest purple (highest intensity) plateaus before program completion due to inbreeding
+
+### *Middle Chart: Genetic Variance*
+- Measures distribution width of trait values
+- Non-zero values indicate potential for further improvement
+- *Critical for understanding breeding potential*
+
+### *Bottom Chart: Maximum Phenotype*
+- Alternative performance metric
+- **Dashed line**: Represents optimal constant action baseline
+- Enables comparison between strategies
+
+*Note: Visual representation available in referenced figure showing progression across all three metrics over the 10 breeding cycles.*
 
 
 ![image](https://github.com/cjGO/cjgo.github.io/blob/master/assets/img/breeder_agent_01.png?raw=true)  
