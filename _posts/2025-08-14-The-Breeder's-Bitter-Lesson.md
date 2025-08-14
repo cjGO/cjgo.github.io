@@ -1,7 +1,7 @@
 ---
 layout: post
 title: The Breeder's Bitter Lesson
-subtitle: RL
+subtitle: Breeding2RL: Defining the next tool beyond genomic selection
 #gh-repo: daattali/beautiful-jekyll
 #gh-badge: [star, fork, follow]
 #cover-img: /assets/img/synarabidopsis/ScreenArt.png
