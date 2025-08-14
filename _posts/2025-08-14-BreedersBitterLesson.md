@@ -1,3 +1,13 @@
+---
+layout: post
+title: The Breeder's Bitter Lesson
+subtitle: RL
+#gh-repo: daattali/beautiful-jekyll
+#gh-badge: [star, fork, follow]
+#cover-img: /assets/img/synarabidopsis/ScreenArt.png
+tags: [synthetic]
+comments: true
+---
 
 ### **The Breeder's Bitter Lesson: From Predicting Winners to Creating Them with AI**
 
